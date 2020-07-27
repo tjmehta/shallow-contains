@@ -305,4 +305,19 @@ describe('shallowContains', () => {
       ).toBe(false)
     })
   })
+
+  describe('err shallow contains...', () => {
+    it('should contain all values in contains object', () => {
+      expect(
+        shallowContains(
+          new Error('boom'),
+          {
+            message: 'boom',
+            stack: /./,
+          },
+          comparator,
+        ),
+      ).toBe(true)
+    })
+  })
 })

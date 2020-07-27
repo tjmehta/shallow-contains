@@ -20,9 +20,10 @@ export default function shallowContains(
   }
 
   const containsEntries = toEntries(contains)
-  const inputMap = toMap(input)
+  const isMap = input instanceof Map
   for (let [k, v] of containsEntries) {
-    if (!equals(inputMap.get(k), v)) return false
+    const inputVal = isMap ? input.get(k) : input[k]
+    if (!equals(inputVal, v)) return false
   }
   return true
 }
@@ -33,12 +34,6 @@ function toSet(val: any): Set<any> {
   if (val instanceof Map) return new Set(val.values())
   // @ts-ignore
   return new Set(Object.values(val))
-}
-
-function toMap(val: any) {
-  if (val instanceof Map) return val
-  // @ts-ignore
-  return new Map(Object.entries(val))
 }
 
 function toEntries(val: any) {
