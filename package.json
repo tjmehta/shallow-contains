@@ -1,7 +1,7 @@
 {
-  "name": "node-module-template",
+  "name": "shallow-contains",
   "version": "0.0.0",
-  "description": "Description",
+  "description": "partial shallow equality comparison between two values",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
@@ -14,6 +14,11 @@
     "url": "git+https://github.com/tjmehta/node-module-template.git"
   },
   "keywords": [
+    "partial",
+    "shallow",
+    "contains",
+    "value",
+    "between"
   ],
   "author": "Tejesh Mehta",
   "license": "MIT",
@@ -25,10 +30,12 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-typescript": "^7.10.1",
     "@types/jest": "^25.2.3",
+    "@types/shallowequal": "^1.1.1",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.0.1",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
     "typescript": "^3.9.3"
-  }
+  },
+  "dependencies": {}
 }
